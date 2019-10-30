@@ -21,8 +21,11 @@ class Navigator extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: 'green',
 	},
+	content: {
+		flex:1,
+		backgroundColor: 'red',
+	}
 })
 
 export default Navigator

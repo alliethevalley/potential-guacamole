@@ -17,8 +17,10 @@ export default function Footer(props) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 80,
-    backgroundColor: 'purple',
+    height: 40,
+    backgroundColor: 'white',
     flexDirection: 'row',
+    borderTopWidth: 5,
+    shadowRadius: 50,
   },
 });
