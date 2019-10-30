@@ -3,14 +3,25 @@ import { StyleSheet, View } from 'react-native';
 import Tab from './Tab'
 
 
-export default function Footer(props) {
-	const screens = props.screens
+export default function Footer({screens, changeScreen, screenIndex}){
+
+	
   return (
-    <View style={styles.container} >
-    <Tab title={screens[0]}/>
-    <Tab title={screens[1]}/>
-    <Tab title={screens[2]}/>
-    <Tab title={screens[3]}/>
+    <View style={styles.container} >{
+    	screens.map((item, key) => {
+    		return(
+    			 <Tab 
+    				title={screens[0]}
+    				changeScreen={changeScreen}
+    				key={key}
+    				index={key}
+    				isSelected = {screenIndex ===key}
+    			/>
+    		)
+    	})
+    }
+
+
     </View>
   );
 }
@@ -20,7 +31,8 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: 'white',
     flexDirection: 'row',
-    borderTopWidth: 5,
+    borderTopWidth: 2,
+    borderTopColor: 'black',
     shadowRadius: 50,
   },
 });

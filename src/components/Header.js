@@ -1,15 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import profile from '../../assets/profile.jpg'
+import Avatar from './Avatar'
 
 
 export default function Header() {
   return (
     <View style={styles.container}>
-    <Image
-      source={profile}
-    
-    }}
+    <Avatar size ={20}
     />
   
     </View>
@@ -21,9 +18,7 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: 'white',
     shadowRadius: 50,
-    borderBottomWidth: 5,
+    borderBottomWidth: 2,
+    borderBottomColor: 'black',
   },
- 
-
-  }
 });

@@ -1,13 +1,27 @@
 import React from 'react';
-import { StyleSheet, View, Text} from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 
+/*functionconst iWasPressed = () => {
+  console.log('i was pressed')
+}*/
 
-export default function Tab(props) {
-	const title = props.title
+export default function Tab (
+  { title, changeScreen, isSelected, index}
+  ) {
+
   return (
-    <View style={styles.container} >
-    <Text>{title}</Text>
+    <TouchableOpacity 
+      style={styles.container} //prop
+      onPress={() => changeScreen(index)} //prop 
+    >
+
+      <View style={styles.container} >
+        <Text style ={
+          isSelected
+          ? styles.selectedText : styles.unselectedText
+        }>{title}</Text>
     </View>
+    </TouchableOpacity>
   );
 }
 
@@ -16,5 +30,11 @@ const styles = StyleSheet.create({
   	flex: 1,
   	alignItems: 'center',
   	justifyContent: 'center',
+  },
+  selectedText:{
+    color: 'blue',
+  },
+  unselectedText:{
+    color:'black',
   },
 });

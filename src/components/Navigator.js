@@ -6,13 +6,36 @@ import About from './About'
 
 const screens = ['about', 'cv', 'music', 'contact']
 
+
 class Navigator extends Component {
+	constructor(props){
+		super(props)
+		this.state = {
+			screenIndex: 0,
+		}
+		this.changeScreen = this.changeScreen.bind(this)
+	}
+	
+	
+	changeScreen(index){
+		this.setState({
+			screenIndex: index,
+		})
+
+	}
+
+
 	render () {
 		return (
 			<View style={styles.container}>
 				<Header />
 				<About />
-				<Footer screens={screens}/>
+				<Footer 
+				screens={screens}
+				screenIndex = {this.state.screenIndex}
+				changeScreen={this.changeScreen}
+				
+				/>
 			</View>
 		)
 	}
