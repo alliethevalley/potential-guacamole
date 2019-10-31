@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 
 description: {
 	textAlign: 'center',
-	marginTop: 50,
+	marginTop:50,
 	/*padding: 30,*/
   },
 });
