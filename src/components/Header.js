@@ -1,17 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import Avatar from './Avatar'
 
 
-export default function Header() {
-  return (
-    <View style={styles.container}>
-    <Avatar size ={20}
-    />
-  
+export default function Header( 
+  {changeScreen}
+  ){
+    return (
+      <TouchableOpacity
+      style={styles.container} 
+      onPress={() => changeScreen(0)} 
+      >
+
+      <View style={styles.container}>
+       <Avatar size ={20} />
     </View>
+    </TouchableOpacity>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -22,3 +30,6 @@ const styles = StyleSheet.create({
     borderBottomColor: 'black',
   },
 });
+
+
+

@@ -25,8 +25,7 @@ const styles = StyleSheet.create({
   },
   
   header: {
-  	fontSize: 35,
- 	/*textAlign: 'center',*/
+  fontSize: 35,
  	marginTop: 24,
  	marginBottom: 48,
  	fontWeight: 'bold',
@@ -35,6 +34,5 @@ const styles = StyleSheet.create({
 description: {
 	textAlign: 'center',
 	marginTop:50,
-	/*padding: 30,*/
   },
 });

@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import Tab from './Tab'
 
 
-export default function Footer({screens, changeScreen, screenIndex}){
+export default function Footer({ screens, changeScreen, screenIndex }){
 
 	
   return (
@@ -11,7 +11,7 @@ export default function Footer({screens, changeScreen, screenIndex}){
     	screens.map((item, key) => {
     		return(
     			 <Tab 
-    				title={screens[0]}
+    				title={item}
     				changeScreen={changeScreen}
     				key={key}
     				index={key}

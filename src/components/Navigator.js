@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
 import { View, StyleSheet } from 'react-native'
+import {screens} from '../data/NavigationData'
 import Header from './Header'
 import Footer from './Footer'
 import About from './About'
+import Music from './Music'
 
-const screens = ['about', 'cv', 'music', 'contact']
 
 
 class Navigator extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			screenIndex: 0,
+			screenIndex: 2, //0
 		}
 		this.changeScreen = this.changeScreen.bind(this)
+		this.focusAboutPage = this.focusAboutPage.bind(this)
 	}
 	
 	
@@ -24,16 +26,21 @@ class Navigator extends Component {
 
 	}
 
+	focusAboutPage() {
+		this.setState({
+			screenIndex: 0,
+		})
+	}
 
 	render () {
 		return (
 			<View style={styles.container}>
-				<Header />
-				<About />
+				<Header focusAboutPage={this.focusAboutPage}/>
+				<Music />
 				<Footer 
-				screens={screens}
-				screenIndex = {this.state.screenIndex}
-				changeScreen={this.changeScreen}
+					screens={screens} test={'test'}
+					screenIndex = {this.screenIndex}
+					changeScreen={this.changeScreen}
 				
 				/>
 			</View>

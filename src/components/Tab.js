@@ -1,19 +1,15 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 
-/*functionconst iWasPressed = () => {
-  console.log('i was pressed')
-}*/
-
 export default function Tab (
   { title, changeScreen, isSelected, index}
   ) {
+      console.log(isSelected)
 
   return (
     <TouchableOpacity 
-      style={styles.container} //prop
-      onPress={() => changeScreen(index)} //prop 
-    >
+      style={styles.container} 
+      onPress={() => changeScreen(index)} > 
 
       <View style={styles.container} >
         <Text style ={
